@@ -1,0 +1,52 @@
+/* ===== AZoom base: theme tokens, reset, typography, layout ===== */
+:root {
+  /* Palette taken from the AZoom logo: blue + orange on white */
+  --blue: #0b5fe0;
+  --blue-dark: #07408f;
+  --blue-light: #e8f0fd;
+  --orange: #ff9a00;
+  --orange-dark: #e08600;
+  --ink: #12233d;
+  --muted: #5c6b82;
+  --line: #dbe3ef;
+  --bg: #f5f8fd;
+  --white: #ffffff;
+  --green: #12a05c;
+  --red: #d93a3a;
+  --radius: 14px;
+  --shadow: 0 6px 24px rgba(11, 95, 224, 0.10);
+  --shadow-lg: 0 14px 40px rgba(7, 64, 143, 0.18);
+  --font: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: var(--font);
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+main { flex: 1; }
+img { max-width: 100%; display: block; }
+a { color: var(--blue); text-decoration: none; }
+a:hover { color: var(--blue-dark); }
+h1, h2, h3 { line-height: 1.2; margin: 0 0 .5em; }
+h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); }
+p { margin: 0 0 1em; }
+
+.container { width: min(1140px, 92%); margin-inline: auto; }
+.section { padding: 70px 0; }
+.section-head { text-align: center; max-width: 620px; margin: 0 auto 40px; }
+.section-head p { color: var(--muted); }
+.section-head h2::after {
+  content: ""; display: block; width: 56px; height: 4px; margin: 12px auto 0;
+  background: var(--orange); border-radius: 4px;
+}
+.muted { color: var(--muted); }
+.hidden { display: none !important; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
