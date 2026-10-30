@@ -1,0 +1,4 @@
+st("Payment of " + money(b.finalBill) + " successful. Thank you!");
+  }
+  saveBooking(b);
+  renderBookings();
