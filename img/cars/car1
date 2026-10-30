@@ -1,9 +1,0 @@
-function render() {
-  const user = currentUser();
-  const loggedIn = user && user.role === "customer";
-  authView.classList.toggle("hidden", loggedIn);
-  bookingsView.classList.toggle("hidden", !loggedIn);
-  if (loggedIn) renderBookings();
-  initNav();
-}
-render();
