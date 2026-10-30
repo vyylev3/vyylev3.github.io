@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Staff Portal – AZoom Car Rental</title>
+  <meta name="description" content="AZoom staff portal: hand over, inspect and manage rental cars.">
+  <link rel="icon" href="img/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head><body>
+  <header class="site-header">
+    <nav class="container nav" aria-label="Main navigation">
+      <a class="logo" href="index.html"><img src="img/logo.png" alt="AZoom Car Rental logo"></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#fleet">Our Cars</a></li>
+        <li><a href="index.html#how">How It Works</a></li>
+        <li><a href="account.html" id="accountLink">My Bookings</a></li>
+        <li><a href="staff.html" class="active">Staff Portal</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="page-title"><div class="container">
+    <h1>Staff Portal</h1>
+    <p>Hand over cars, inspect returns and keep the fleet status up to date.</p>
+  </div></div>
+
+  <main class="section">
+    <div class="container">
+      <div id="staffLogin" class="card auth-box hidden">
+        <h2>Staff login</h2>
+        <div id="staffMsg"></div>
+        <form id="staffForm" novalidate>
+          <div class="form-grid">
+            <div class="field full"><label for="sEmail">Staff email</label><input type="email" id="sEmail" required></div>
+            <div class="field full"><label for="sPass">Password</label><input type="password" id="sPass" required></div>
+          </div>
+          <br><button class="btn btn-block" type="submit">Log in</button>
+        </form>
+        <div class="demo-note"><b>Demo staff account</b><br>Email: staff@azoom.com<br>Password: staff123</div>
+      </div>
+
+      <div id="staffView" class="hidden">
+        <div class="staff-bar">
+          <h2 style="margin:0">Welcome, <span id="staffName"></span></h2>
+          <button class="btn btn-outline btn-sm" id="staffLogout">Log out</button>
+        </div>
+
+        <div class="stats" id="stats"></div>
+
+        <div class="card" style="margin-bottom:26px">
+          <h2>Bookings</h2>
+          <div class="tabs" id="bookingTabs">
+            <button class="tab active" data-filter="action">Needs action</button>
+            <button class="tab" data-filter="all">All bookings</button>
+          </div>
+          <div class="table-wrap"><table>
+            <thead><tr><th>Booking</th><th>Customer</th><th>Car</th><th>Dates</th><th>Status</th><th>Action</th></tr></thead>
+            <tbody id="bookingRows"></tbody>
+          </table></div>
+        </div>
+
+        <div class="card">
+          <h2>Fleet status</h2>
+          <div class="table-wrap"><table>
+            <thead><tr><th>Car</th><th>Type</th><th>Rate / day</th><th>Status</th><th>Action</th></tr></thead>
+            <tbody id="fleetRows"></tbody>
+          </table></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Handover dialog -->
+  <dialog id="handoverDialog"><form method="dialog" class="dialog-body" id="handoverForm">
+    <h2>Hand over car</h2>
+    <p id="handoverInfo" class="muted"></p>
+    <div class="field"><label><input type="checkbox" id="idChecked"> I have checked the customer's driving licence and ID</label></div>
+    <div class="field" style="margin-top:8px"><label><input type="checkbox" id="carChecked"> The car is charged and the keys are handed over</label></div>
+    <div class="dialog-actions">
+      <button type="button" class="btn btn-outline" data-close>Cancel</button>
+      <button type="submit" class="btn">Confirm hand over</button>
+    </div>
+  </form></dialog>
+
+  <!-- Inspection dialog -->
+  <dialog id="inspectDialog"><form method="dialog" class="dialog-body" id="inspectForm">
+    <h2>Inspect returned car</h2>
+    <p id="inspectInfo" class="muted"></p>
+    <p><b>Tick any damage found:</b></p>
+    <div class="damage-list" id="damageList"></div>
+    <div class="form-grid" style="margin-top:14px">
+      <div class="field"><label for="otherFee">Other damage charge ($)</label><input type="number" id="otherFee" min="0" step="1" value="0"></div>
+      <div class="field"><label for="notes">Inspection notes</label><input type="text" id="notes" placeholder="e.g. No damage found"></div>
+    </div>
+    <p style="margin-top:14px">Damage total: <b id="damageTotal">$0.00</b></p>
+    <div class="dialog-actions">
+      <button type="button" class="btn btn-outline" data-close>Cancel</button>
+      <button type="submit" class="btn">Save inspection &amp; send bill</button>
+    </div>
+  </form></dialog>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3>AZoom Car Rental</h3>
+          <p>100% electric cars. Zoom your way to victory.</p>
+        </div>
+        <div>
+          <h3>Visit our office</h3>
+          <p>12 Zoom Avenue, City Centre</p>
+          <p>Daily 8:00 am – 8:00 pm</p>
+        </div>
+        <div>
+          <h3>Quick links</h3>
+          <p><a href="index.html#fleet">Our Cars</a></p>
+          <p><a href="account.html">My Bookings</a></p>
+          <p><a href="staff.html">Staff Portal</a></p>
+        </div>
+      </div>
+      <p class="copyright">© 2026 AZoom Car Rental.</p>
+    </div>
+  </footer>
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/staff.js"></script>
+</body>
+</html>

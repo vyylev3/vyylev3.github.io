@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Bookings – AZoom Car Rental</title>
+  <meta name="description" content="Manage your AZoom reservations, returns and payments.">
+  <link rel="icon" href="img/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head><body>
+  <header class="site-header">
+    <nav class="container nav" aria-label="Main navigation">
+      <a class="logo" href="index.html"><img src="img/logo.png" alt="AZoom Car Rental logo"></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#fleet">Our Cars</a></li>
+        <li><a href="index.html#how">How It Works</a></li>
+        <li><a href="account.html" class="active" id="accountLink">My Bookings</a></li>
+        <li><a href="staff.html">Staff Portal</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="page-title"><div class="container">
+    <h1>My Bookings</h1>
+    <p>Track your reservations, return your car and pay your final bill.</p>
+  </div></div>
+
+  <main class="section">
+    <div class="container">
+      <!-- Logged out: login / register -->
+      <div id="authView" class="card auth-box hidden">
+        <div class="tabs" role="tablist">
+          <button class="tab active" data-tab="login" role="tab">Log in</button>
+          <button class="tab" data-tab="register" role="tab">Register</button>
+        </div>
+        <div id="authMsg"></div>
+
+        <form id="loginForm" novalidate>
+          <div class="form-grid">
+            <div class="field full"><label for="lEmail">Email</label><input type="email" id="lEmail" required autocomplete="email"></div>
+            <div class="field full"><label for="lPass">Password</label><input type="password" id="lPass" required autocomplete="current-password"></div>
+          </div>
+          <br><button class="btn btn-block" type="submit">Log in</button>
+        </form>
+
+        <form id="registerForm" class="hidden" novalidate>
+          <div class="form-grid">
+            <div class="field full"><label for="rName">Full name</label><input type="text" id="rName" required></div>
+            <div class="field full"><label for="rEmail">Email</label><input type="email" id="rEmail" required autocomplete="email"></div>
+            <div class="field"><label for="rPhone">Phone</label><input type="tel" id="rPhone" required></div>
+            <div class="field"><label for="rLicence">Driving licence no.</label><input type="text" id="rLicence" required></div>
+            <div class="field full"><label for="rPass">Password (min. 6 characters)</label><input type="password" id="rPass" required autocomplete="new-password"></div>
+          </div>
+          <br><button class="btn btn-block" type="submit">Create account</button>
+        </form>
+      </div>
+
+      <!-- Logged in: bookings -->
+      <div id="bookingsView" class="hidden">
+        <div class="staff-bar">
+          <h2 id="welcome" style="margin:0"></h2>
+          <div>
+            <a class="btn btn-orange btn-sm" href="index.html#fleet">+ New reservation</a>
+            <button class="btn btn-outline btn-sm" id="logoutBtn">Log out</button>
+          </div>
+        </div>
+        <div class="booking-list" id="bookingList"></div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3>AZoom Car Rental</h3>
+          <p>100% electric cars. Zoom your way to victory.</p>
+        </div>
+        <div>
+          <h3>Visit our office</h3>
+          <p>12 Zoom Avenue, City Centre</p>
+          <p>Daily 8:00 am – 8:00 pm</p>
+        </div>
+        <div>
+          <h3>Quick links</h3>
+          <p><a href="index.html#fleet">Our Cars</a></p>
+          <p><a href="account.html">My Bookings</a></p>
+          <p><a href="staff.html">Staff Portal</a></p>
+        </div>
+      </div>
+      <p class="copyright">© 2026 AZoom Car Rental.</p>
+    </div>
+  </footer>
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/account.js"></script>
+</body>
+</html>

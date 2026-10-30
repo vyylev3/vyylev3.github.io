@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reserve a car – AZoom Car Rental</title>
+  <meta name="description" content="Reserve your AZoom electric rental car.">
+  <link rel="icon" href="img/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head><body>
+  <header class="site-header">
+    <nav class="container nav" aria-label="Main navigation">
+      <a class="logo" href="index.html"><img src="img/logo.png" alt="AZoom Car Rental logo"></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#fleet" class="active">Our Cars</a></li>
+        <li><a href="index.html#how">How It Works</a></li>
+        <li><a href="account.html" id="accountLink">My Bookings</a></li>
+        <li><a href="staff.html">Staff Portal</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="page-title"><div class="container">
+    <h1>Reserve your car</h1>
+    <p>Fill in the details below and secure the booking with a credit card.</p>
+  </div></div>
+
+  <main class="section">
+    <div class="container">
+      <div id="notLoggedIn" class="card auth-box hidden">
+        <h2>Please log in first</h2>
+        <p class="muted">You need a customer account to reserve a car.</p>
+        <a id="loginLink" class="btn btn-block" href="account.html">Log in or register</a>
+      </div>
+
+      <div class="reserve-layout hidden" id="reserveLayout">
+        <form class="card" id="reserveForm" novalidate>
+          <h2>Booking details</h2>
+          <div class="form-grid">
+            <div class="field full">
+              <label for="car">Car</label>
+              <select id="car" required></select>
+            </div>
+            <div class="field">
+              <label for="pickup">Pick-up date</label>
+              <input type="date" id="pickup" required>
+              <span class="error" id="pickupErr"></span>
+            </div>
+            <div class="field">
+              <label for="return">Return date</label>
+              <input type="date" id="return" required>
+              <span class="error" id="returnErr"></span>
+            </div>
+          </div>
+
+          <h2 style="margin-top:26px">Payment (credit card)</h2>
+          <div class="card-visual" aria-hidden="true">
+            <div>AZoom secure payment</div>
+            <div class="num" id="cardPreview">•••• •••• •••• ••••</div>
+            <div id="holderPreview">CARDHOLDER NAME</div>
+          </div>
+          <div class="form-grid">
+            <div class="field full">
+              <label for="holder">Name on card</label>
+              <input type="text" id="holder" autocomplete="cc-name" required>
+              <span class="error" id="holderErr"></span>
+            </div>
+            <div class="field full">
+              <label for="cardNo">Card number</label>
+              <input type="text" id="cardNo" inputmode="numeric" placeholder="1234 5678 9012 3456" maxlength="19" autocomplete="cc-number" required>
+              <span class="error" id="cardNoErr"></span>
+            </div>
+            <div class="field">
+              <label for="expiry">Expiry (MM/YY)</label>
+              <input type="text" id="expiry" placeholder="MM/YY" maxlength="5" autocomplete="cc-exp" required>
+              <span class="error" id="expiryErr"></span>
+            </div>
+            <div class="field">
+              <label for="cvv">CVV</label>
+              <input type="password" id="cvv" inputmode="numeric" maxlength="4" autocomplete="cc-csc" required>
+              <span class="error" id="cvvErr"></span>
+            </div>
+          </div>
+          <p class="muted" style="font-size:.82rem;margin-top:14px">Demo only – use any made-up card number. Only the last 4 digits are saved. Your card is not charged now; the final bill is settled after the return inspection.</p>
+          <button class="btn btn-orange btn-block" type="submit">Confirm reservation</button>
+        </form>
+
+        <aside class="card summary" aria-live="polite">
+          <h2>Summary</h2>
+          <img id="sumImg" src="" alt="">
+          <div class="summary-row"><span>Car</span><b id="sumCar">–</b></div>
+          <div class="summary-row"><span>Daily rate</span><b id="sumRate">–</b></div>
+          <div class="summary-row"><span>Days</span><b id="sumDays">–</b></div>
+          <div class="summary-row total"><span>Estimated rental</span><span id="sumTotal">–</span></div>
+          <p class="muted" style="font-size:.82rem;margin:12px 0 0">Pick up at: <b id="sumOffice"></b></p>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3>AZoom Car Rental</h3>
+          <p>100% electric cars. Zoom your way to victory.</p>
+        </div>
+        <div>
+          <h3>Visit our office</h3>
+          <p>12 Zoom Avenue, City Centre</p>
+          <p>Daily 8:00 am – 8:00 pm</p>
+        </div>
+        <div>
+          <h3>Quick links</h3>
+          <p><a href="index.html#fleet">Our Cars</a></p>
+          <p><a href="account.html">My Bookings</a></p>
+          <p><a href="staff.html">Staff Portal</a></p>
+        </div>
+      </div>
+      <p class="copyright">© 2026 AZoom Car Rental.</p>
+    </div>
+  </footer>
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/reserve.js"></script>
+</body>
+</html>

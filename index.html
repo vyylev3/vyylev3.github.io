@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AZoom Car Rental – Electric cars to hire</title>
+  <meta name="description" content="Reserve an electric rental car online with AZoom.">
+  <link rel="icon" href="img/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head><body>
+  <header class="site-header">
+    <nav class="container nav" aria-label="Main navigation">
+      <a class="logo" href="index.html"><img src="img/logo.png" alt="AZoom Car Rental logo"></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="index.html#fleet">Our Cars</a></li>
+        <li><a href="index.html#how">How It Works</a></li>
+        <li><a href="account.html" id="accountLink">My Bookings</a></li>
+        <li><a href="staff.html">Staff Portal</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-label="Welcome">
+      <div class="hero-content container">
+        <h1>AZoom</h1>
+        <p>Zoom your way to victory.</p>
+        <a class="btn" href="#fleet">Book Now</a>
+      </div>
+    </section>
+
+    <section class="section" id="fleet">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>Our Electric Fleet</h2>
+          <p>Eight great electric cars, one simple price per day. Pick your ride and reserve it online.</p>
+        </div>
+        <div class="fleet-grid" id="fleetGrid"></div>
+      </div>
+    </section>
+
+    <section class="section" id="how" style="background:#fff">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>How It Works</h2>
+          <p>Five easy steps from booking to final bill.</p>
+        </div>
+        <div class="steps">
+          <div class="step reveal"><div class="num">1</div><h3>Reserve online</h3><p>Choose a car and dates, then secure the booking with your credit card.</p></div>
+          <div class="step reveal"><div class="num">2</div><h3>Pick up</h3><p>Show your licence at the AZoom office and collect your keys.</p></div>
+          <div class="step reveal"><div class="num">3</div><h3>Return</h3><p>Drop the car at any designated AZoom car park.</p></div>
+          <div class="step reveal"><div class="num">4</div><h3>Inspection</h3><p>Our team checks the car and records any damage.</p></div>
+          <div class="step reveal"><div class="num">5</div><h3>Pay final bill</h3><p>Rental cost plus any damage charges – no surprises.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="locations">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>Office &amp; Return Car Parks</h2>
+          <p>Collect your car at our office and return it to any of these car parks.</p>
+        </div>
+        <div class="loc-grid" id="locGrid"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3>AZoom Car Rental</h3>
+          <p>100% electric cars. Zoom your way to victory.</p>
+        </div>
+        <div>
+          <h3>Visit our office</h3>
+          <p>12 Zoom Avenue, City Centre</p>
+          <p>Daily 8:00 am – 8:00 pm</p>
+        </div>
+        <div>
+          <h3>Quick links</h3>
+          <p><a href="index.html#fleet">Our Cars</a></p>
+          <p><a href="account.html">My Bookings</a></p>
+          <p><a href="staff.html">Staff Portal</a></p>
+        </div>
+      </div>
+      <p class="copyright">© 2026 AZoom Car Rental.</p>
+    </div>
+  </footer>
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/index.js"></script>
+</body>
+</html>
