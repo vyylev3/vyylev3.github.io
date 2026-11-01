@@ -1,8 +1,3 @@
-/* ===== AZoom "database" layer – everything lives in localStorage =====
-   FRONT-END DEMO ONLY: passwords are stored as plain text in localStorage
-   because the brief does not require a backend. Never do this in production.
-   Only the card brand + last 4 digits are kept, never the full card number. */
-
 const KEYS = { users: "azoom_users", cars: "azoom_car_status", bookings: "azoom_bookings", session: "azoom_session" };
 
 function read(key, fallback) {
