@@ -1,5 +1,3 @@
-/* ===== AZoom static data (pre-stored JavaScript arrays) ===== */
-
 const CARS = [
   { id: "nissan-leaf",  name: "Nissan Leaf",      type: "Hatchback", seats: 5, range: 385, rate: 70,  img: "img/cars/nissan-leaf.jpg" },
   { id: "mg4",          name: "MG4 Electric",     type: "Hatchback", seats: 5, range: 450, rate: 65,  img: "img/cars/mg4.jpg" },
@@ -35,7 +33,7 @@ const DAMAGE_ITEMS = [
   { id: "cable",        label: "Charging cable missing",      fee: 120 }
 ];
 
-/* Pre-stored staff account (front-end demo only) */
+/* Pre-stored staff account */
 const STAFF_ACCOUNT = {
   name: "AZoom Staff", email: "staff@azoom.com", password: "staff123", role: "staff"
 };
