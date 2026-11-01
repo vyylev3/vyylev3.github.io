@@ -1,8 +1,3 @@
-/* ==========================================================
-   AZoom Car Rental - application logic (front-end demo only)
-   Sections: 1 Store | 2 Helpers | 3 Billing | 4 Auth | 5 Views
-             6 Customer actions | 7 Staff actions | 8 Events
-   ========================================================== */
 'use strict';
 
 /* ---------- 1. Store (localStorage "database") ---------- */
